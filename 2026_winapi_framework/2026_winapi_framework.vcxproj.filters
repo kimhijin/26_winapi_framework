@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{5dd53408-db91-4156-8e98-7fd155c7c381}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{0ddf667d-229a-44c7-9dd5-7819649baade}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\01.Core">
+      <UniqueIdentifier>{10e35cdd-5a37-4a47-bf23-d78402853c7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02.Manager">
+      <UniqueIdentifier>{c050478b-601d-4684-9ccf-d29be0728a5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Object">
+      <UniqueIdentifier>{d50e66f3-10e8-4600-8b20-568cbe1a1fad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05.Resource">
+      <UniqueIdentifier>{7a1b1865-afb1-4ee1-916f-08358913ad29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06.Component">
+      <UniqueIdentifier>{37b7c2ff-045a-46ec-8b9f-b00e0ae7146b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\07.UI">
+      <UniqueIdentifier>{0b3dbf53-c73b-47d1-ae99-e381dc44f89a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\08.Module">
+      <UniqueIdentifier>{391ae38b-0b31-43af-800c-318f388815bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\99.Headers">
+      <UniqueIdentifier>{fc9c1010-fab5-473e-bd84-4eff63aabc3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06.Component\Animation">
+      <UniqueIdentifier>{9d12163b-14de-4afb-be17-e015152f617d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06.Component\Physics">
+      <UniqueIdentifier>{f21d89da-e925-47ca-b677-547fa898c090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Default">
+      <UniqueIdentifier>{910e2439-4dac-4260-8639-90c06f08e8c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Scene">
+      <UniqueIdentifier>{a2730f38-b721-4f03-9118-f07a0fec1f18}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="2026_winapi_framework.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>Engine\01.Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>Engine\99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Engine\99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Engine\01.Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Engine\02.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Engine\03.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Engine\99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Engine\99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Engine\02.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Engine\02.Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Enums.h">
+      <Filter>Engine\99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Engine\04.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Engine\04.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="2026_winapi_framework.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="2026_winapi_framework.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Engine\01.Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core.cpp">
+      <Filter>Engine\01.Core</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Engine\99.Headers</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Engine\01.Core</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Engine\02.Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Engine\03.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Engine\02.Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Engine\02.Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Engine\04.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Engine\04.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp" />
+  </ItemGroup>
+</Project>
