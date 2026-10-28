@@ -21,6 +21,7 @@ void Core::GameLoop()
 void Core::CleanUp()
 {
 	ReleaseBackBuffer();
+	m_gameScene.Release();
 	::ReleaseDC(m_hWnd, m_hDC);
 }
 

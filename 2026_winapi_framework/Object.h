@@ -1,9 +1,10 @@
 #pragma once
+#include"Scene.h"
 class Object
 {
 public:
 	Object();
-	~Object();
+	virtual ~Object(); // 가상 소멸자
 public:
 	virtual void Update() {};
 	virtual void Render(HDC hdc);
@@ -19,6 +20,7 @@ public:
 		m_pos += delta;
 	}
 public:
+	Scene* m_scene;
 	Vector2 m_pos;
 	Vector2 m_size;
 };

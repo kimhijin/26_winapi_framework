@@ -10,6 +10,7 @@ Object::Object()
 
 Object::~Object()
 {
+	int a = 0;
 }
 
 void Object::Render(HDC hdc)

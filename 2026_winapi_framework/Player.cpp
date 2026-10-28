@@ -3,14 +3,14 @@
 
 void Player::Update()
 {
-    if (GET_KEY(Key::LEFT))
+   /* if (GET_KEY(Key::LEFT))
         Translate({ -100.f * fDT, 0 });
     if (GET_KEY(Key::RIGHT))
         Translate({ 100.f * fDT, 0 });
     if (GET_KEY(Key::UP))
         Translate({ 0,-100.f * fDT });
     if (GET_KEY(Key::DOWN))
-        Translate({ 0,100.f * fDT });
+        Translate({ 0,100.f * fDT });*/
 
 }
 

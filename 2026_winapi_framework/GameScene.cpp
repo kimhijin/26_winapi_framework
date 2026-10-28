@@ -6,15 +6,21 @@ void GameScene::Init()
 {
 	for (int i = 0; i < 5; ++i)
 	{
-		Object enemy;
-		enemy.SetPos({ 200 + i * 200, 100 });
-		enemy.SetSize({ 50,50 });
-		AddObject(enemy, Layer::Enemy);
+		Object* enemy = AddObject<Object>(Layer::Player);
+		enemy->SetPos({ 200 + i * 200, 100 });
+		AddObject<Object>(Layer::Enemy);
+		enemy->SetSize({ 50,50 });
 	}
 
-	Player player;
-	player.SetPos({ WINDOW_WIDTH / 2,
+	Object* player = AddObject<Player>(Layer::Player);
+	player->SetPos({ WINDOW_WIDTH / 2,
 		WINDOW_HEIGHT / 2 });
-	player.SetSize({ 50,50 });
-	AddObject(player, Layer::Player);
+	player->SetSize({ 50,50 });
 }
+void GameScene::OnUpdate()
+{
+}
+void GameScene::OnRender(HDC hdc)
+{
+}
+

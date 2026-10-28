@@ -101,6 +101,7 @@
       <Filter>Engine\04.Scene</Filter>
     </ClInclude>
     <ClInclude Include="Player.h" />
+    <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2026_winapi_framework.rc">
@@ -147,5 +148,6 @@
       <Filter>Engine\04.Scene</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
 </Project>
