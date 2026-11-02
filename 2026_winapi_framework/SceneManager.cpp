@@ -13,8 +13,18 @@ void SceneManager::Init()
 
 void SceneManager::Update()
 {
+	if (m_nextScene != nullptr)
+	{
+		if (m_curScene != nullptr)
+			m_curScene->Release();
+
+		m_curScene = m_nextScene;
+		m_nextScene = nullptr;
+		m_curScene->Init();
+	}
 	if (m_curScene != nullptr)
 		m_curScene->Update();
+
 }
 
 void SceneManager::Render(HDC hdc)
@@ -40,9 +50,12 @@ void SceneManager::LoadScene(const wstring& sceneName)
 		return;
 	if (m_curScene != nullptr)
 		m_curScene->Release();
+	m_nextScene = iter->second;
 
-	m_curScene->Release();
-	m_curScene = iter->second;
-	m_curScene->Init();
+	//if (m_curScene != nullptr)
+	//	m_curScene->Release();
+	//m_curScene = iter->second;
+	//m_curScene->Init();
+
 
 }

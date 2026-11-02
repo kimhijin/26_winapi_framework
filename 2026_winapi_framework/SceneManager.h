@@ -18,10 +18,13 @@ private:
 	template<SceneType T>
 	void RegisterScene(const wstring& sceneName)
 	{
-		m_curScene[sceneName] = new T;
+		if (m_scenes.contains(sceneName))
+			return;
+		m_scenes[sceneName] = new T;
 	}
 private:
 	Scene* m_curScene = nullptr;
+	Scene* m_nextScene = nullptr;
 	std::unordered_map<wstring, Scene*> m_scenes;
 };
 

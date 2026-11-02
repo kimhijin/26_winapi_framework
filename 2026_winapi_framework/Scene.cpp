@@ -7,9 +7,11 @@ void Scene::Update()
 {
 	for (auto& layer : m_objects)
 	{
-		for (Object* obj : layer)
+		//for (Object* obj : layer)
+		for(size_t i =0; i<layer.size(); i++)
 		{
-			obj->Update();
+			if (layer[i]->IsActive())
+				layer[i]->Update();
 		}
 	}
 	OnUpdate();
@@ -21,7 +23,8 @@ void Scene::Render(HDC hdc)
 	{
 		for (Object* obj : layer)
 		{
-			obj->Render(hdc);
+			if(obj->IsActive())
+				obj->Render(hdc);
 		}
 	}
 	OnRender(hdc);

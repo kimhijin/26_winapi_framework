@@ -100,8 +100,17 @@
     <ClInclude Include="GameScene.h">
       <Filter>Engine\04.Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h" />
     <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="Enemy.h">
+      <Filter>Engine\03.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Engine\03.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Formation.h">
+      <Filter>Engine\03.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="2026_winapi_framework.rc">
@@ -147,7 +156,16 @@
     <ClCompile Include="GameScene.cpp">
       <Filter>Engine\04.Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp" />
     <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Engine\03.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Engine\03.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Formation.cpp">
+      <Filter>Engine\03.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp" />
   </ItemGroup>
 </Project>

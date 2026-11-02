@@ -20,7 +20,7 @@ public:                                              \
         delete ptr;          \
         ptr = nullptr;       \
     }
-#define fDT Time::GetDT();
+#define fDT Time::GetDT()
 #define GET_KEY(key) Input::GetKey(key)
 #define GET_KEYDOWN(key) Input::GetKeyDown(key)
 #define GET_KEYUP(key) Input::GetKeyUp(key)

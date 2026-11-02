@@ -1,5 +1,4 @@
 #pragma once
-#include"Scene.h"
 class Object
 {
 public:
@@ -7,7 +6,7 @@ public:
 	virtual ~Object(); // °¡»ó ¼Ò¸êÀÚ
 public:
 	virtual void Update() {};
-	virtual void Render(HDC hdc);
+	virtual void Render(HDC hdc) {};
 public:
 	Vector2 GetPos() const { return m_pos; }
 	void SetPos(Vector2 pos) { m_pos = pos; }
@@ -19,8 +18,14 @@ public:
 	{
 		m_pos += delta;
 	}
+	void Scale(float factor)
+	{
+		m_size *= factor;
+	}
+	bool IsActive() const { return m_active; }
+	void SetActive(bool active) { m_active = active; }
 public:
-	Scene* m_scene;
+	bool m_active;
 	Vector2 m_pos;
 	Vector2 m_size;
 };

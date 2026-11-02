@@ -1,5 +1,4 @@
 #pragma once
-#include "GameScene.h"
 
 class Core
 {
@@ -17,7 +16,7 @@ private:
 public:
 	HWND GetHwnd() const { return m_hWnd; }
 private :
-	GameScene m_gameScene;
+	//GameScene m_gameScene;
 
 	HBITMAP m_hBackBit;
 	HDC m_hBackDC;

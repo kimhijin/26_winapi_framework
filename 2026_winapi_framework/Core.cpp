@@ -1,12 +1,13 @@
 #include "pch.h"
 #include "Core.h"
+#include "SceneManager.h"
 
 bool Core::Init(HWND hWnd)
 {
 	m_hWnd = hWnd;
 	m_hDC = ::GetDC(m_hWnd);
 	CreateBackBuffer();
-	m_gameScene.Init();
+	GET_SINGLE(SceneManager)->Init();
 	Time::Init();
 	return true;
 }
@@ -21,7 +22,7 @@ void Core::GameLoop()
 void Core::CleanUp()
 {
 	ReleaseBackBuffer();
-	m_gameScene.Release();
+	GET_SINGLE(SceneManager)->Release();
 	::ReleaseDC(m_hWnd, m_hDC);
 }
 
@@ -30,9 +31,7 @@ void Core::MainUpdate()
 {
 	Time::Update();
 	Input::Update();
-	m_gameScene.Update();
-
-
+	GET_SINGLE(SceneManager)->Update();
 
 }
 
@@ -40,7 +39,8 @@ void Core::MainRender()
 {
 	//::Rectangle(m_hBackDC, -1, -1, WINDOW_WIDTH+1, WINDOW_HEIGHT+1);
 	::PatBlt(m_hBackDC, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, WHITENESS);
-	m_gameScene.Render(m_hBackDC);
+	GET_SINGLE(SceneManager)->Render(m_hDC);
+
 
 	//Vector2 pos = m_obj.GetPos();
 	//Vector2 size = m_obj.GetSize();
