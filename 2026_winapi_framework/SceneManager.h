@@ -1,6 +1,6 @@
 #pragma once
+#include"Scene.h"
 
-class Scene;
 template<typename T>
 concept SceneType = std::is_convertible_v<T*, Scene*>;
 class SceneManager
@@ -20,11 +20,11 @@ private:
 	{
 		if (m_scenes.contains(sceneName))
 			return;
-		m_scenes[sceneName] = new T;
+		m_scenes[sceneName] = std::make_unique<T>();
 	}
 private:
 	Scene* m_curScene = nullptr;
 	Scene* m_nextScene = nullptr;
-	std::unordered_map<wstring, Scene*> m_scenes;
+	std::unordered_map<wstring, std::unique_ptr<Scene>> m_scenes;
 };
 

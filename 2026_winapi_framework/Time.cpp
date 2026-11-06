@@ -20,6 +20,7 @@ void Time::Update()
 	m_prevCount = m_curCount;
 	if (m_dT > m_maxdT)
 		m_dT = m_maxdT;
+	m_unscaledDT = std::min(m_dT, m_maxdT);
 
 	//fps
 	++m_frameCount;
@@ -31,6 +32,9 @@ void Time::Update()
 		m_frameCount = 0;
 		UpdateTitle();
 	}
+	if (m_hitStopRemain > 0.f)
+		m_hitStopRemain -= m_unscaledDT;
+	m_dT = (m_hitStopRemain > 0.f) ? 0.f : m_unscaledDT * m_scale;
 
 }
 

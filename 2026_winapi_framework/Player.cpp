@@ -19,7 +19,7 @@ void Player::Update()
     if (GET_KEYDOWN(Key::X))
         Scale(std::pow(2.f, fDT));
 
-    constexpr float FIRE_INTERVAL = 0.1f;
+    constexpr float FIRE_INTERVAL = 0.05f;
     if (m_fireTimer > 0.f)
         m_fireTimer -= fDT;
     if (GET_KEY(Key::SPACE) && m_fireTimer <= 0.f)
@@ -35,6 +35,10 @@ void Player::Fire()
         ->AddObject<Bullet>(Layer::PlayerBullet);
    bullet->SetSize({ 10.f,20.f });
    bullet->SetPos({ GetPos() - Vector2{0.f, GetSize().y / 2} });
+   //bullet->SetVelocity({ -500.f, -500.f });
+   static float angle = 0.f;
+   bullet->SetVelocity(Vec2::FromAngle( DegToRad(angle)) * 500.f);
+   angle += 10.f;
 }
 
 void Player::Render(HDC hdc)

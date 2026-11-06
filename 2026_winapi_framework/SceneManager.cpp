@@ -35,8 +35,6 @@ void SceneManager::Render(HDC hdc)
 
 void SceneManager::Release()
 {
-	for (auto& [name, scene] : m_scenes)
-		SAFE_DELETE(scene);
 	m_scenes.clear();
 	m_curScene = nullptr;
 }
@@ -50,7 +48,7 @@ void SceneManager::LoadScene(const wstring& sceneName)
 		return;
 	if (m_curScene != nullptr)
 		m_curScene->Release();
-	m_nextScene = iter->second;
+	m_nextScene = iter->second.get();
 
 	//if (m_curScene != nullptr)
 	//	m_curScene->Release();

@@ -21,7 +21,7 @@ void Scene::Render(HDC hdc)
 {
 	for (auto& layer : m_objects)
 	{
-		for (Object* obj : layer)
+		for (auto& obj : layer)
 		{
 			if(obj->IsActive())
 				obj->Render(hdc);
@@ -36,11 +36,6 @@ void Scene::Release()
 
 	for (auto& layer : m_objects)
 	{
-		for (Object* obj : layer)
-		{
-			SAFE_DELETE(obj);
-
-		}
 		layer.clear();
 	}
 }

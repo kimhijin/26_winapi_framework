@@ -79,7 +79,7 @@
     <ClInclude Include="Object.h">
       <Filter>Engine\03.Object</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2.h">
+    <ClInclude Include="Vec2.h">
       <Filter>Engine\99.Headers</Filter>
     </ClInclude>
     <ClInclude Include="Utils.h">

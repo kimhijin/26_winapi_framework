@@ -26,6 +26,8 @@ void GameScene::Init()
 }
 void GameScene::OnUpdate()
 {
+	if (GET_KEYDOWN(Key::C))
+		Time::HitStop(0.1f);
 	if(GET_KEYDOWN(Key::ESC))
 		GET_SINGLE(SceneManager)->LoadScene(L"Title");
 }

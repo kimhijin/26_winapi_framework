@@ -1,6 +1,5 @@
 #pragma once
-//#include"Object.h"
-class Object;
+#include"Object.h"
 
 template<typename T>
 concept ObjectType = std::is_convertible_v<T*, Object*>;
@@ -26,11 +25,12 @@ public:
 	template<typename T>
 	T* AddObject(Layer layer)
 	{
-		T* obj = new T;
-		m_objects[(UINT)layer].push_back(obj);
-		return obj;
+		auto obj = std::make_unique<T>();
+		T* raw = obj.get();
+		m_objects[(UINT)layer].push_back(std::move(obj));
+		return raw;
 	}
 private:
-	vector<Object*> m_objects[(UINT)Layer::END];
+	vector<std::unique_ptr<Object>> m_objects[(UINT)Layer::END];
 };
 

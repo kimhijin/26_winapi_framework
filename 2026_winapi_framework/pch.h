@@ -16,6 +16,13 @@
 #include <ctime>
 #include <type_traits>
 #include <format>
+#include <numbers>
+#include <crtdbg.h>
+#include <memory>
+#ifdef  _DEBUG
+#define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
+#endif //  _DEBUG
+
 
 // °¢Á¾ using
 using std::vector;
@@ -25,10 +32,11 @@ using std::wstring;
 
 // 99. Headers(My Headers)
 #include "Defines.h"
-#include "Vector2.h"
+#include "Vec2.h"
 #include "Utils.h"
 #include "Time.h"
 #include "Input.h"
 #include "Enums.h"
+
 
 #pragma comment(lib, "winmm.lib")
